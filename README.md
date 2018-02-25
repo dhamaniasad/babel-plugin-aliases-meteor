@@ -1,11 +1,11 @@
-# babel-plugin-meteorAlias
+# babel-plugin-meteoralias
 
 A babel plugin to transform aliases which also works with meteor.
 It also works with webpack and ava etc.
 
 ## Installation
 
-> npm i --D babel-plugin-meteorAlias
+> npm i --D babel-plugin-meteoralias
 
 
 ## Usage
@@ -13,7 +13,7 @@ It also works with webpack and ava etc.
 ```json
 {
   "plugins": [
-    ["babel-plugin-meteorAlias", [{
+    ["babel-plugin-meteoralias", [{
       "path": "preact-compat",
       "alias": "react"
     }]]

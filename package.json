@@ -13,7 +13,7 @@
   },
   "license": "ISC",
   "main": "dist/index.js",
-  "name": "babel-plugin-meteorAlias",
+  "name": "babel-plugin-meteoralias",
   "scripts": {
     "compile": "babel src -d dist",
     "lint": "eslint src/",
