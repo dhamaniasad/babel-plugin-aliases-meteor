@@ -25,7 +25,7 @@ function babelAlias() {
             return;
           }
 
-          const matchingAlias = matchToAlias(importPath, state.opts);
+          const matchingAlias = matchToAlias(importPath, state.opts.aliases);
 
           if (matchingAlias) {
             const newPath = matchingAlias.path;

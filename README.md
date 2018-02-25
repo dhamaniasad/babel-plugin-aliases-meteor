@@ -13,12 +13,17 @@ It also works with webpack and ava etc.
 ```json
 {
   "plugins": [
-    ["babel-plugin-meteoralias", [{
-      "path": "preact-compat",
-      "alias": "react"
-    }]]
+    ["babel-plugin-meteoralias", {
+    	"aliases": [
+    		{
+				"path": "preact-compat",
+      			"alias": "react"
+    		}
+    	]
+    }]
   ]
 }
+
 ```
 
 This will transform all import statements that import `alias` to `path`.
