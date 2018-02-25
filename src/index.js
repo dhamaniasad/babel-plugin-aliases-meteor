@@ -6,7 +6,7 @@ function matchToAlias(importPath, aliases) {
   const matchingAliases = [];
 
   aliases.forEach((alias) => {
-    if (importPath === alias.alias) {
+    if (importPath === alias.from) {
       matchingAliases.push(alias);
     }
   });
@@ -28,7 +28,7 @@ function babelAlias() {
           const matchingAlias = matchToAlias(importPath, state.opts.aliases);
 
           if (matchingAlias) {
-            const newPath = matchingAlias.path;
+            const newPath = matchingAlias.to;
             nodePath.node.source.value = newPath; // eslint-disable-line no-param-reassign
           }
         },
@@ -38,4 +38,3 @@ function babelAlias() {
 }
 
 exports.default = babelAlias;
-
