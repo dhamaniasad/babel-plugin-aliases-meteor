@@ -34,11 +34,13 @@ This will transform all import statements that import `alias` to `path`.
 ## Example
 
 ```js
-import { React } from 'react';
+import React from 'react';
+import { render } from 'react-dom';
 ```
 
 This will transform into
 
 ```js
-import { React } from 'preact-compat';
+import React from 'preact-compat';
+import { render } from 'preact-compat';
 ```
