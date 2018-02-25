@@ -1,7 +1,5 @@
 'use strict';
 
-var path = require('path');
-
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
@@ -10,7 +8,7 @@ function matchToAlias(importPath, aliases) {
   var matchingAliases = [];
 
   aliases.forEach(function (alias) {
-    if (importPath.startsWith(alias.alias)) {
+    if (importPath === alias.alias) {
       matchingAliases.push(alias);
     }
   });
@@ -32,11 +30,8 @@ function babelAlias() {
           var matchingAlias = matchToAlias(importPath, state.opts);
 
           if (matchingAlias) {
-            var absolutePath = importPath.replace(matchingAlias.alias, matchingAlias.path);
-            var sourceFilePath = state.file.opts.filename.replace(process.cwd(), '');
-            var relativePath = path.relative(path.parse(sourceFilePath).dir, absolutePath);
-
-            nodePath.node.source.value = relativePath; // eslint-disable-line no-param-reassign
+            var newPath = matchingAlias.path;
+            nodePath.node.source.value = newPath; // eslint-disable-line no-param-reassign
           }
         }
       }

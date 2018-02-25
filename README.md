@@ -21,7 +21,7 @@ It also works with webpack and ava etc.
 }
 ```
 
-This will transform all import statements that have `alias` at the beginning to a relative path.
+This will transform all import statements that import `alias` to `path`.
 
 ## Example
 

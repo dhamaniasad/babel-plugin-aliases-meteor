@@ -1,5 +1,3 @@
-const path = require('path');
-
 Object.defineProperty(exports, '__esModule', {
   value: true,
 });
@@ -8,7 +6,7 @@ function matchToAlias(importPath, aliases) {
   const matchingAliases = [];
 
   aliases.forEach((alias) => {
-    if (importPath.startsWith(alias.alias)) {
+    if (importPath === alias.alias) {
       matchingAliases.push(alias);
     }
   });
@@ -30,11 +28,8 @@ function babelAlias() {
           const matchingAlias = matchToAlias(importPath, state.opts);
 
           if (matchingAlias) {
-            const absolutePath = importPath.replace(matchingAlias.alias, matchingAlias.path);
-            const sourceFilePath = state.file.opts.filename.replace(process.cwd(), '');
-            const relativePath = path.relative(path.parse(sourceFilePath).dir, absolutePath);
-
-            nodePath.node.source.value = relativePath; // eslint-disable-line no-param-reassign
+            const newPath = matchingAlias.path;
+            nodePath.node.source.value = newPath; // eslint-disable-line no-param-reassign
           }
         },
       },
