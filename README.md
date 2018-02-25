@@ -1,6 +1,6 @@
 # babel-plugin-meteoralias
 
-A Babel plugin to transform aliases which works with Meteor.
+A Babel 7 plugin to transform aliases which works with Meteor.
 
 ## Installation
 
@@ -13,16 +13,16 @@ A Babel plugin to transform aliases which works with Meteor.
 {
   "plugins": [
     ["babel-plugin-meteoralias", {
-    	"aliases": [
-    		{
-    			"from": "react",
-				"to": "preact-compat"
-    		},
-    		{
-    			"from": "react-dom",
-    			"to": "preact-compat"
-    		}
-    	]
+        "aliases": [
+            {
+                "from": "react",
+                "to": "preact-compat"
+            },
+            {
+                "from": "react-dom",
+                "to": "preact-compat"
+            }
+        ]
     }]
   ]
 }
@@ -40,5 +40,5 @@ import { React } from 'react';
 This will transform into
 
 ```js
-import { React } from 'preact-compat;
+import { React } from 'preact-compat';
 ```
