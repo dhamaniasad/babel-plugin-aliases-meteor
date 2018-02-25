@@ -2,7 +2,7 @@
   "author": "",
   "bundleDependencies": false,
   "deprecated": false,
-  "description": "A babel plugin to transform aliases which also works with meteor. It also works with webpack and ava etc.",
+  "description": "A babel plugin to transform aliases for Meteor",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
@@ -13,13 +13,13 @@
   },
   "license": "ISC",
   "main": "dist/index.js",
-  "name": "babel-plugin-aliases-meteor",
+  "name": "babel-plugin-meteorAlias",
   "scripts": {
     "compile": "babel src -d dist",
     "lint": "eslint src/",
     "prepublish": "npm run lint && npm run compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": "github:dhamaniasad/babel-plugin-aliases-meteor"
 }

@@ -1,11 +1,11 @@
-# babel-plugin-aliases
+# babel-plugin-meteorAlias
 
 A babel plugin to transform aliases which also works with meteor.
 It also works with webpack and ava etc.
 
 ## Installation
 
-> npm i --D babel-plugin-aliases
+> npm i --D babel-plugin-meteorAlias
 
 
 ## Usage
@@ -13,9 +13,9 @@ It also works with webpack and ava etc.
 ```json
 {
   "plugins": [
-    ["babel-plugin-aliases", [{
-      "path": "/some/deep/path",
-      "alias": "alias"
+    ["babel-plugin-meteorAlias", [{
+      "path": "preact-compat",
+      "alias": "react"
     }]]
   ]
 }
@@ -25,14 +25,12 @@ This will transform all import statements that import `alias` to `path`.
 
 ## Example
 
-Imagine there is a file inside /some/path/file.js
-
 ```js
-import module from 'alias/file.js';
+import { React } from 'react';
 ```
 
 This will transform into
 
 ```js
-import module from '../deep/path/file.js';
+import { React } from 'preact-compat;
 ```
